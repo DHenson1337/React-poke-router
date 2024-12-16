@@ -1,5 +1,6 @@
 import React from "react";
 import pokeball from "../images/pokemon-1536849_1280.png";
+import { Link } from "react-router";
 
 function ListDisplay({ pokeList, getPokemons }) {
   return (
@@ -15,13 +16,12 @@ function ListDisplay({ pokeList, getPokemons }) {
             return (
               <li style={{ backgroundColor: "#1d65a6", margin: "10px" }}>
                 <img src={pokeball} height="20px" width="20px" alt="pokeball" />
-                <a
-                  href={pokemon.url}
-                  target="_blank"
+                <Link
+                  to={`/pokemon/${pokemon.name}`}
                   style={{ padding: "5px" }}
                 >
                   {pokemon.name}
-                </a>
+                </Link>
               </li>
             );
           })}
